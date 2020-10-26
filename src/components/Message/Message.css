@@ -1,0 +1,8 @@
+.message {
+  display: flex;
+  padding: 5px;
+}
+
+.user-message {
+  align-self: flex-end;
+}
