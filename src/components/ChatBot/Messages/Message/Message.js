@@ -1,6 +1,6 @@
 import classnames from "classnames";
-import MessageAvatar from "../MessageAvatar/MessageAvatar";
-import MessageBubble from "../MessageBubble/MessageBubble";
+import MessageAvatar from "./MessageAvatar/MessageAvatar";
+import MessageBubble from "./MessageBubble/MessageBubble";
 import "./Message.css";
 
 const Message = ({ message }) => {

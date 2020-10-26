@@ -4,4 +4,4 @@
 
 2. I put all the colors in theme.css file. I used css variables.
 
-3. All components (except App component) are under components directory.
+3. All components are under components directory. The directories are nested.

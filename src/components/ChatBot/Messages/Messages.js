@@ -1,5 +1,5 @@
 import "./Messages.css";
-import Message from "../Message/Message";
+import Message from "./Message/Message";
 
 const Messages = ({ messages }) => {
   return (
