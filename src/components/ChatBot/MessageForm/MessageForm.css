@@ -2,6 +2,7 @@
   background-color: var(--form-bg-color);
   padding: 5px;
   display: flex;
+  height: var(--message-form-height);
 }
 
 .message-input {

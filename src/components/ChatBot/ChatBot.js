@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Messages from "./Messages/Messages";
 import MessageForm from "./MessageForm/MessageForm";
@@ -13,7 +13,7 @@ const initialMessages = [
 ];
 
 const App = () => {
-  const [messages, setMessages] = React.useState(initialMessages);
+  const [messages, setMessages] = useState(initialMessages);
   return (
     <div className="chat-bot">
       <div className="messages-container">

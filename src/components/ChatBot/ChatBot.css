@@ -9,4 +9,9 @@
 .messages-container {
   flex-grow: 1;
   overflow-y: auto;
+  margin-bottom: 5px;
+
+  height: var(
+    --message-form-height
+  ); /* This line was added to fix a bug in Safari browser */
 }
