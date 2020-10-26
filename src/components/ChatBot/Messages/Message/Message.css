@@ -6,3 +6,21 @@
 .user-message {
   align-self: flex-end;
 }
+
+.combined-message.user-message {
+  margin-right: 65px;
+  margin-top: -10px;
+}
+
+.combined-message.user-message .message-bubble {
+  border-top-right-radius: 5px !important;
+}
+
+.combined-message:not(.user-message) {
+  margin-left: 65px;
+  margin-top: -10px;
+}
+
+.combined-message:not(.user-message) .message-bubble {
+  border-top-left-radius: 5px !important;
+}

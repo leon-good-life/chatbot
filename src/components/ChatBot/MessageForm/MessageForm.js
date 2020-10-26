@@ -4,16 +4,53 @@ import { v4 as uuidv4 } from "uuid";
 import "./MessageForm.css";
 import submitIcon from "./submit_icon.png";
 
-const MessageForm = ({ messages, setMessages }) => {
+const generateBotResponses = ({ fullName, messageInputValue }) => {
+  if (!fullName) {
+    return [
+      {
+        messageText: `Nice to meet you ${messageInputValue}.`,
+        isBot: true,
+        id: uuidv4(),
+      },
+      {
+        messageText:
+          "Alright, this how it's going to work. List any mathematical expression you can think of - I'll crunch it in no time",
+        isBot: true,
+        id: uuidv4(),
+      },
+    ];
+  }
+  try {
+    const result = evaluate(messageInputValue);
+    return [
+      {
+        messageText: result,
+        isBot: true,
+        id: uuidv4(),
+      },
+      {
+        messageText: "This was easy, give me somthing harder 🤓",
+        isBot: true,
+        id: uuidv4(),
+      },
+    ];
+  } catch (err) {
+    return [
+      {
+        messageText: "Sorry. I did'nt understand.",
+        isBot: true,
+        id: uuidv4(),
+      },
+    ];
+  }
+};
+
+const MessageForm = ({ messages, setMessages, fullName, setFullName }) => {
   const [messageInputValue, setMessageInputValue] = useState("");
   const onSubmit = (e) => {
     e.preventDefault();
-    let botResponseMessage = "";
-    try {
-      botResponseMessage = evaluate(messageInputValue);
-    } catch (err) {
-      botResponseMessage = "Sorry. I did'nt understand.";
-    }
+    const responses = generateBotResponses({ fullName, messageInputValue });
+
     setMessages([
       ...messages,
       {
@@ -21,12 +58,13 @@ const MessageForm = ({ messages, setMessages }) => {
         isBot: false,
         id: uuidv4(),
       },
-      {
-        messageText: botResponseMessage,
-        isBot: true,
-        id: uuidv4(),
-      },
+      ...responses,
     ]);
+
+    if (!fullName) {
+      localStorage.setItem("fullName", messageInputValue);
+      setFullName(messageInputValue);
+    }
     setMessageInputValue("");
   };
   return (

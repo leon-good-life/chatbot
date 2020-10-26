@@ -7,9 +7,13 @@ const Messages = ({ messages }) => {
   useEffect(() => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+  const combinedMessages = messages.map((message, index) => {
+    const isCombined = index > 0 && messages[index - 1].isBot === message.isBot;
+    return { ...message, isCombined };
+  });
   return (
     <div className="messages">
-      {messages.map((message) => (
+      {combinedMessages.map((message) => (
         <Message key={message.id} message={message} />
       ))}
       <div ref={messagesEndRef} />
