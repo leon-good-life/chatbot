@@ -3,8 +3,9 @@
 1. I deployed the app to Heroku. Live preview: [https://leon-chatbot.herokuapp.com/](https://leon-chatbot.herokuapp.com/).
 
 2. The app can be viewed by both ways:
-   2.1. By opening it on a desktop computer.
-   2.2. By opening mobile view in chrome dev tools.
+
+- By opening it on a desktop computer.
+- By opening mobile view in chrome dev tools.
 
 3. I used create-react-app, it makes all configurations (webpack/babel/libraries...)
    automatically, and it is agood option if I need to initialize a React app fast.
