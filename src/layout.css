@@ -1,4 +1,5 @@
 :root {
   --message-form-height: 57px;
-  --messages-height: calc(100vh - var(--message-form-height));
+  /* --messages-height: calc(100vh - var(--message-form-height)); */
+  --messages-height: 100%;
 }

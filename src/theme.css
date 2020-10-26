@@ -3,4 +3,6 @@
   --bot-bubble-bg-color: #ececec;
   --user-bubble-bg-color: #4a4a4a;
   --user-bubble-text-color: #eeeeee;
+  --debug-dark: #333333;
+  --debug-light: white;
 }

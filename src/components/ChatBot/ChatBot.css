@@ -15,3 +15,28 @@
     --message-form-height
   ); /* This line was added to fix a bug in Safari browser */
 }
+
+/*
+  For debugging purposes,
+  for presenting the ChatBot component
+  in the center of the screen:
+  
+  (Alternatively, open mobile view in chrome dev tools,
+  or use this component in your app)
+*/
+@media only screen and (min-width: 1000px) {
+  body {
+    background-color: var(--debug-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+  }
+  .chat-bot {
+    max-height: 800px;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--debug-light);
+  }
+}
